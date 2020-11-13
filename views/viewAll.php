@@ -6,11 +6,12 @@ ob_start();
 ?>
 
 
+
 <div class="jumbotron p-4 p-md-5 text-white rounded bg-dark">
     <div class="col-md-6 px-0">
-      <h1 class="display-4 font-italic">Title of a longer featured blog post</h1>
-      <p class="lead my-3">Multiple lines of text that form the lede, informing new readers quickly and efficiently about what’s most interesting in this post’s contents.</p>
-      <p class="lead mb-0"><a href="#" class="text-white font-weight-bold">Continue reading...</a></p>
+      <h1 class="display-4 font-italic"><?= $theLastPost['title']; ?></h1>
+      <p class="lead my-3"><?= substr($theLastPost['content'], 0,250)."..."; ?></p>
+      <p class="lead mb-0"><a href="?id=<?= $theLastPost['id'] ?>" class="text-white font-weight-bold">Continue reading...</a></p>
     </div>
   </div>
 
@@ -26,7 +27,7 @@ ob_start();
         <div class="col p-4 d-flex flex-column position-static">
           <strong class="d-inline-block mb-2 text-primary"><?= $movie['author']; ?></strong>
           <h3 class="mb-0">  <?= htmlspecialchars($movie['title']); ?></h3>
-          <div class="mb-1 text-muted">Nov 12</div>
+          <div class="mb-1 text-muted"><?= date("d-m-Y", strtotime( $movie['date'])); ?></div>
           <p class="card-text mb-auto"><?= htmlspecialchars(substr($movie['content'], 0,49))."..."; ?></p>
           <a href="?id=<?= $movie['id'] ?>" class="stretched-link">Continue reading</a>
         </div>
@@ -45,7 +46,7 @@ ob_start();
   </div>
 
 <?php
-        
+        $metaDesc = ">Bienvenue sur notre super Blog en MVC";
         $loopArticle =  ob_get_clean();
         require_once('template.php');
       

@@ -1,10 +1,10 @@
 
 <!doctype html>
-<html lang="en">
+<html lang="fr">
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <meta name="description" content="">
+    <meta name="description" content="<?= $metaDesc; ?>">
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v4.1.1">
     <title>Blog Template · Bootstrap</title>
@@ -86,7 +86,7 @@
   <?php if(!empty($loopArticle)){echo $loopArticle;} ?>
 </div>
 
-<?= $content; ?>
+<?php if(!empty($thePost)){echo $thePost;} ?>
 
 <footer class="blog-footer">
   <p>Blog template built for <a href="https://getbootstrap.com/">Bootstrap</a> by <a href="https://twitter.com/mdo">@mdo</a>.</p>

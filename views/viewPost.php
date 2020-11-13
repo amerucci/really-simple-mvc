@@ -15,8 +15,11 @@ ob_start();
 
       <div class="blog-post">
         <h2 class="blog-post-title"><?= $post['title']; ?> </h2>
-        <p class="blog-post-meta">December 14, 2013 by <a href="#"><?= $post['author']; ?></a></p>
-        <p><?= $post['content']; ?></p>
+        <p class="blog-post-meta"><?= date("d-m-Y", strtotime( $post['date'])); ?> by <a href="#"><?= $post['author']; ?></a></p>
+        <p><?= htmlentities($post['content']); ?></p>
+
+    
+
       </div><!-- /.blog-post -->
 
     
@@ -70,8 +73,8 @@ ob_start();
 
 
 <?php 
-
-$content =  ob_get_clean();
+$metaDesc = $post['title'].' : '.$post['content'];
+$thePost =  ob_get_clean();
 require_once('template.php');
 
 ?>

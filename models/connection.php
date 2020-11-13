@@ -1,8 +1,13 @@
 <?php
 
+
+
+
 class Databases
 {
-    public function connect() //fonction de connextion à la base
+
+    
+    public static function connect() //fonction de connextion à la base
     {
         try
         {

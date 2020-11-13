@@ -50,6 +50,15 @@ function all(){
     $all = new Post();
     //On dit quelle méthode l'on souhaite appeler
     $all = $all->allPosts(); // $all = $result
+
+    $theLastPost = new Post();
+    $theLastPost = $theLastPost->lastPost();
+   // var_dump($theLastPost);
+  
+
+    
+
+
     //On fait le rendu
     require(__DIR__.'/../views/viewAll.php');
 
