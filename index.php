@@ -1,4 +1,4 @@
-<h1>Mon super Blog</h1>
+
 <?php
 
 require_once(__DIR__.'/controllers/frontController.php');
