@@ -7,7 +7,7 @@ class Databases
 {
 
     
-    public static function connect() //fonction de connextion à la base
+    public function connect() //fonction de connextion à la base
     {
         try
         {

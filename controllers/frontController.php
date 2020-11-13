@@ -47,6 +47,8 @@ function all(){
 
       /* ICI ON VA APPELER AVEC DE L'OBJET ET UNE BDD */
     //On instancie l'objet = on le crée
+    //$All c'est l'objet
+    // POST() c'est le moule
     $all = new Post();
     //On dit quelle méthode l'on souhaite appeler
     $all = $all->allPosts(); // $all = $result
@@ -54,12 +56,7 @@ function all(){
     $theLastPost = new Post();
     $theLastPost = $theLastPost->lastPost();
    // var_dump($theLastPost);
-  
-
-    
-
-
-    //On fait le rendu
+     //On fait le rendu
     require(__DIR__.'/../views/viewAll.php');
 
 }
